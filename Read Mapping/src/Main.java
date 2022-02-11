@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) /*throws FileNotFoundException*/ {
 		int total = 0, retotal = 0;
-		// File file = new File("input_HW0.txt") ;
+		// File file = new File("input_Read Mapping.txt") ;
         // Scanner in = new Scanner(file);
         Scanner in = new Scanner(System.in);
 		int readCount=Integer.parseInt(in.nextLine());
