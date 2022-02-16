@@ -145,7 +145,8 @@ public class Main implements Iterable {
 <h3 id="ConvexHull">Convex Hull</h3>
 Take an array of N points as the input, and return its convex hull vertices.
 The main function read an input file, of which the first line specifies the maximum distance (d) to union two points, the second line specifies the number of points (N). According to the coordinates of the N points, outputing the number of points in N serving as a convex hull vertex for any connected components.  
-<!--![Sample image]()-->
+
+![Sample image](/figure/convexhull_ex.png)
 
 ```
 public class Main {
@@ -246,4 +247,4 @@ An edge is defined as: v is pointing to w, if and only if the distance between v
 
 We further define the source s as the point with the smallest x(s)+y(s), and target t as the point with the largest x(t)+y(t).
 The program reports the smallest d, which generates at least one path from s to t.
-<!--![CD Sample image](/figure)-->
+![CD Sample image](/figure/CriticalDistance_ex.png)
