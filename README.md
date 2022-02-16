@@ -77,6 +77,7 @@ public class Main <Key extends Comparable<Key>, Value> {
 
 <h3 id="HierarchicalClusteringTree">Hierarchical Clustering Tree</h3>
 Implement a clustering algorithm called 'centroid hierarchical clustering algorithm' to hierarchically group N 2-dimensional points in the plane and generate a clustering tree, which has the following API:
+
 ```
 public class Main {
 
