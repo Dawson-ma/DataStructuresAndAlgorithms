@@ -13,10 +13,18 @@
  * [Critical Distance](#CriticalDistance)
 
 <h2 id="ReadMapping">Read Mapping</h2>
+Report how many reads can be mapped to the reference sequence and how many reads can be mapped more than once (i.e., multiple times).  
+In this example, we can see both "CACTG" and "GCCAT" can be mapped to the reference sequence "AGCTGAGCACTGGAGTGGAGTTTTCCTGTGGAGAGGAGCCATGCCCACTGTAGAG", while "CATGT" cannot be   mapped.  
+Thus, the first line of the output is two. And the second line of the output is one because "CACTG" can be mapped twice.
 
 <h2 id="UnionFind">Union Find</h2>
+The main function of Main class is a real number followed by a finite number of protein interacting pairs in each row: ProteinA ProteinB strength.  
+The real number is used as a threshold to determine whether the strength of the protein-protein interaction (PPI) is large enough to be retained in the network.
+If the strength is good enough, i.e. strength>=threshold, the PPI is valid, and the pairs of proteins should be connected.  
+If the strength of PPI is not good enough, please skip the line. In the end, there will be a set of connected components. If a PPI is not considered, the proteins should be omitted if it is not present in the previous PPI pairs.
 
-<h2 id="PPI">PPI</h2>
+
+<h2 id="PPI">PPI (Protein-Protein Interaction)</h2>
 
 <h2 id="Deques">Deques</h2>
 
