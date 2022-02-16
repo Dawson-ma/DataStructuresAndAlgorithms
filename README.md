@@ -246,4 +246,4 @@ An edge is defined as: v is pointing to w, if and only if the distance between v
 
 We further define the source s as the point with the smallest x(s)+y(s), and target t as the point with the largest x(t)+y(t).
 The program reports the smallest d, which generates at least one path from s to t.
-<!--![Sample image]()-->
+<!--![CD Sample image](/figure)-->
