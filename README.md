@@ -22,10 +22,74 @@ Thus, the first line of the output is two. And the second line of the output is 
 The main function of Main class is a real number followed by a finite number of protein interacting pairs in each row: ProteinA ProteinB strength.  
 The real number is used as a threshold to determine whether the strength of the protein-protein interaction (PPI) is large enough to be retained in the network.
 If the strength is good enough, i.e. strength>=threshold, the PPI is valid, and the pairs of proteins should be connected.  
-If the strength of PPI is not good enough, please skip the line. In the end, there will be a set of connected components. If a PPI is not considered, the proteins should be omitted if it is not present in the previous PPI pairs.
+If the strength of PPI is not good enough, please skip the line. In the end, there will be a set of connected components. If a PPI is not considered, the proteins should be omitted if it is not present in the previous PPI pairs.  
+
+**Example input:**  
+```
+200
+9606.ENSP00000000001 9606.ENSP00000000002 490
+9606.ENSP00000000001 9606.ENSP00000000004 198
+9606.ENSP00000000004 9606.ENSP00000000005 159
+9606.ENSP00000000011 9606.ENSP00000000010 606
+9606.ENSP00000000010 9606.ENSP00000000012 167
+9606.ENSP00000000011 9606.ENSP00000000002 267
+9606.ENSP00000000015 9606.ENSP00000000020 201
+9606.ENSP00000000099 9606.ENSP00000000087 150
+9606.ENSP00000000099 9606.ENSP00000000023 240
+9606.ENSP00000000002 9606.ENSP00000000013 271
+9606.ENSP00000000024 9606.ENSP00000000029 157
+9606.ENSP00000000008 9606.ENSP00000000009 418
+9606.ENSP00000000014 9606.ENSP00000000020 278
+9606.ENSP00000000022 9606.ENSP00000000024 185
+
+Connected components:
+(9606.ENSP00000000001 9606.ENSP00000000002 9606.ENSP00000000010 9606.ENSP00000000011 9606.ENSP00000000013)
+(9606.ENSP00000000015 9606.ENSP00000000020 9606.ENSP00000000014)
+(9606.ENSP00000000023 9606.ENSP00000000099)
+(9606.ENSP00000000008 9606.ENSP00000000009)
+```
+
+**Example output:**
+```
+12
+4
+```
 
 <h3 id="PPI">PPI (Protein-Protein Interaction)</h3>
-Construct a network (graph) using a adjacency list and explore the network using a stack or queue.
+Construct a network (graph) using a adjacency list and explore the network using a stack or queue.  
+
+Functions
+
+```
+public Main(int n){}
+// constructor, n is the number of proteins in
+the network (the adjacency list)
+
+public void add(String, String){};
+// add a pair of proteins as an
+edge of the network
+// throw an `IndexOutOfBoundsException` if adding
+more than n proteins
+
+public int size(){};
+// return the number of unique edges of the
+network
+
+public String[] neighbors(String){};
+// return all the neighbors of a
+protein as an array, where the proteins in the array are sorted
+alphabetically
+// throw an `IllegalArgumentException` if protein not
+found
+
+public String[] interactions(String, int){};
+// return all the
+interacting proteins (including both direct or indirect interactions)
+of a protein through at most k edges, where the proteins in the array
+are sorted alphabetically. The parameter k could be 0 or any positive
+integers.
+// throw an `IllegalArgumentException` if protein not found
+```
 
 <h3 id="Deques">Deques</h3>
 Implement elementary data structures using arrays, linked lists, generics and iterators.
@@ -36,6 +100,47 @@ Deque implementation support each deque operation in constant worst-case time an
 
 **Sliding window problem**:
 Main function should read in a number k and a series of numbers, and then consider a sliding window of size k, which is going to move from the very left of the array (the series of numbers) to the very right. Each time you can only see the k numbers in the window, and the sliding window moves right by one position at a time. Get the max value in each sliding window and then print out the results
+
+API
+
+```
+public class Main implements Iterable {
+
+    public Main() // construct an empty deque
+
+    public boolean isEmpty() // is the deque empty?
+
+    public int size() // return the number of items on the deque
+
+    public void addFirst(Item item) // add the item to the front
+
+    public void addLast(Item item) // add the item to the end
+
+    public Item removeFirst() // remove and return the item from the front
+
+    public Item removeLast() // remove and return the item from the end
+
+    public Item peekFirst() //return the fist item of the deque
+
+    public Item peekLast() //return the last item of the deque
+
+    public Iterator iterator() // return an iterator over items in order from front to end
+
+    public static void main throws FileNotFoundException(String[] args){
+
+        File file = new File(args[0]) ;// file name assigned
+
+
+
+        // File file = new File("test.in") ; // filename for local test (delete this part when uploading to onlinejudge)
+
+        // file reading 
+
+        // implement sliding window problem
+
+    }
+}
+```
 
 <h3 id="ConvexHull">Convex Hull</h3>
 Take an array of N points as the input, and return its convex hull vertices.
@@ -77,6 +182,7 @@ public class Main <Key extends Comparable<Key>, Value> {
 
 <h3 id="HierarchicalClusteringTree">Hierarchical Clustering Tree</h3>
 Implement a clustering algorithm called 'centroid hierarchical clustering algorithm' to hierarchically group N 2-dimensional points in the plane and generate a clustering tree, which has the following API:
+
 ```
 public class Main {
 
