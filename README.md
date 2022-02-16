@@ -22,7 +22,7 @@ Thus, the first line of the output is two. And the second line of the output is 
 The main function of Main class is a real number followed by a finite number of protein interacting pairs in each row: ProteinA ProteinB strength.  
 The real number is used as a threshold to determine whether the strength of the protein-protein interaction (PPI) is large enough to be retained in the network.
 If the strength is good enough, i.e. strength>=threshold, the PPI is valid, and the pairs of proteins should be connected.  
-If the strength of PPI is not good enough, please skip the line. In the end, there will be a set of connected components. If a PPI is not considered, the proteins should be omitted if it is not present in the previous PPI pairs.  
+If the strength of PPI is not good enough, please skip the line. In the end, there will be a set of connected components. If a PPI is not considered, the proteins should be omitted if it is not present in the previous PPI pairs.
 
 **Example input:**  
 ```
@@ -58,7 +58,7 @@ Connected components:
 <h3 id="PPI">PPI (Protein-Protein Interaction)</h3>
 Construct a network (graph) using a adjacency list and explore the network using a stack or queue.  
 
-Functions
+Functions:
 
 ```
 public Main(int n){}
@@ -101,7 +101,7 @@ Deque implementation support each deque operation in constant worst-case time an
 **Sliding window problem**:
 Main function should read in a number k and a series of numbers, and then consider a sliding window of size k, which is going to move from the very left of the array (the series of numbers) to the very right. Each time you can only see the k numbers in the window, and the sliding window moves right by one position at a time. Get the max value in each sliding window and then print out the results
 
-API
+API:
 
 ```
 public class Main implements Iterable {
@@ -147,6 +147,40 @@ Take an array of N points as the input, and return its convex hull vertices.
 The main function read an input file, of which the first line specifies the maximum distance (d) to union two points, the second line specifies the number of points (N). According to the coordinates of the N points, outputing the number of points in N serving as a convex hull vertex for any connected components.  
 <!--![Sample image]()-->
 
+```
+public class Main {
+
+    public static int[] ConvexHullVertex(Point2D[] a) {
+
+        // return ConvexHullVertex的index set，
+
+        // index in a：0, 1, 2, 3, 4, ....a.length-1
+
+    }
+
+    public static void main(String[] args) {
+
+        File file = new File(args[0]) ;// file name assigned
+
+        // File file = new File("test.in") ; // filename for local test (delete this part when uploading to onlinejudge)
+
+
+
+        // 1. read in the file containing N 2-dimentional points
+
+        // 2. create an edge for each pair of points with a distance <= d
+
+        // 3. find connected components (CCs) with a size >= 3
+
+        // 4. for each CC, find its convex hull vertices by calling ConvexHullVertex(a[])
+
+        // 5. count the number of points in N serving as a convex hull vertex, print it
+
+    }
+}
+```
+
+
 <h3 id="ParticleCollision">Particle Collision</h3>
 Calculate the particle collision with obstacles by Event-Driven Simulation using priority queue.
 There are several initial conditions:
@@ -154,6 +188,20 @@ The space is bounded in (0,0), (0,1), (1,0), (1,1)
 In the middle, there is a square obstacle (0.4,0.4), (0.4,0.6), (0.6,0.4), (0.6,0.6)
 Each particle has own mass, radius, initial position(rx,ry), initial viscosity vector(vx,vy) at T = 0
 The program return every collision count of each particle in the given time T.
+
+**Input example:**
+```
+2
+100
+0.015 0.015 0.01 0.001 0.02 1
+0.885 0.885 0.01 0.013 0.02 1
+```
+
+**Output example:**
+```
+1
+7
+```
 
 <h3 id="IntervalSearchTree">Interval Search Tree</h3>
 Implement an interval search tree data structure which has the following API:
@@ -198,3 +246,4 @@ An edge is defined as: v is pointing to w, if and only if the distance between v
 
 We further define the source s as the point with the smallest x(s)+y(s), and target t as the point with the largest x(t)+y(t).
 The program reports the smallest d, which generates at least one path from s to t.
+<!--![Sample image]()-->
